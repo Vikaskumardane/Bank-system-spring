@@ -19,9 +19,9 @@ public class AccountController {
     AccountService AccService;
 
     @GetMapping("/")
-        public ResponseEntity<List<Account>> getAllAccounts() {
-        List<Account> accounts = (List<Account>) AccService.getAllAccounts();
-        return ResponseEntity.ok(accounts);
-
-        }
+    public ResponseEntity<List<Account>> getAllAccounts() {
+        List<Account> accounts = AccService.getAllAccounts();
+        System.out.println(accounts);
+        return ResponseEntity.ok(accounts); // Correct way to wrap the response
+    }
 }

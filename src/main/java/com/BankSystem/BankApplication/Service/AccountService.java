@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class AccountService {
+public class AccountService implements IAccountService {
 
     @Autowired
     AccountRepository AccRepo;
 
     //get all account details
-    public ResponseEntity<List<Account>> getAllAccounts() {
-        return (ResponseEntity<List<Account>>) AccRepo.findAll();
+    public List<Account> getAllAccounts() {
+        return  AccRepo.findAll(); // Returns list, not ResponseEntity
     }
 
 }

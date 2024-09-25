@@ -27,8 +27,8 @@ public class Account {
     @Column(nullable = false)
     private double balance;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "account_type_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "account_type_id", nullable = false)
     private AccountType accountType;
 
     @Column(nullable = false)
